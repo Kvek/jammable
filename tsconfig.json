@@ -18,9 +18,28 @@
       }
     ],
     "paths": {
-      "@components/*": ["./src/*"]
+      "@*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
+      "@components/*": ["./src/components/*"],
+      "@providers/*": ["./src/providers/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@wrappers/*": ["./src/wrappers/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".eslintrc.cjs",
+    "vitest.config.ts",
+    "next.config.js",
+    "git_hooks/branch-lint.config.js",
+    "git_hooks/commit-lint.config.js",
+    "git_hooks/staged-lint.config.js",
+    "tailwind.config.ts",
+    "postcss.config.js"
+  ],
   "exclude": ["node_modules"]
 }

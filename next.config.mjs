@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  devIndicators: {
+    buildActivityPosition: "bottom-right",
+  },
+  experimental: {
+    typedRoutes: true,
+  },
+  generateBuildId: process.env.GIT_HASH,
+};
 
 export default nextConfig;
