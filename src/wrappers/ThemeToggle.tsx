@@ -5,7 +5,7 @@ import type { FC } from "react";
 
 import { ThemeEnum } from "@types";
 
-import { Button } from "@components/ui/button";
+import { Button } from "@components/ui/Button";
 
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
