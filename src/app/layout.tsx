@@ -28,7 +28,7 @@ const RootLayout: WrapperComponentType = ({ children }) => (
       <ReduxProvider>
         <ThemeProvider disableTransitionOnChange enableSystem attribute="class">
           <Navbar />
-          <div className="p-1">{children}</div>
+          <div className="px-4 pt-20">{children}</div>
         </ThemeProvider>
       </ReduxProvider>
     </body>
