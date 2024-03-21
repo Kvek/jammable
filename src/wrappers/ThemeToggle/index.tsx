@@ -16,6 +16,7 @@ export const ThemeToggle: FC = () => {
 
   return (
     <Button
+      aria-label="theme toggle"
       onClick={() => {
         setTheme(theme === DARK ? LIGHT : DARK);
       }}
