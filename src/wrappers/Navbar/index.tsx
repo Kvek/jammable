@@ -1,6 +1,7 @@
 import type { FC } from "react";
 
 import { Logo, ThemeToggle } from "@wrappers";
+import { Navlinks } from "@wrappers/Navlinks";
 
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
@@ -18,11 +19,15 @@ export const Navbar: FC = () => (
         </div>
       </div>
 
-      <span className="flex items-center">
+      <div className="hidden md:flex">
+        <Navlinks />
+      </div>
+
+      <div className="flex items-center">
         <MagnifyingGlassIcon className="mx-2 h-[1.3rem] w-[1.3rem] md:hidden" />
 
         <ThemeToggle />
-      </span>
+      </div>
     </div>
   </div>
 );
