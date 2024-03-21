@@ -12,6 +12,5 @@ module.exports = {
   "*.{js,jsx,ts,tsx}": [
     "vitest related --run --passWithNoTests --typecheck.enabled",
     buildEslintCommand,
-    "npx prettier --write",
   ],
 };
