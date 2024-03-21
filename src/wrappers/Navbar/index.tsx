@@ -5,8 +5,8 @@ import { Avatar, Logo, Navlinks, ThemeToggle } from "@wrappers";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 export const Navbar: FC = () => (
-  <div className="fixed z-[3] flex h-16 w-full items-center shadow dark:shadow-dark">
-    <div className="fixed h-5 w-full select-none bg-shadow-rainbow blur-2xl" />
+  <div className="dark:shadow-dark fixed z-[3] flex h-16 w-full items-center shadow">
+    <div className="bg-shadow-rainbow fixed h-5 w-full select-none blur-2xl" />
     <div className="z-10 flex h-full w-full items-center justify-between bg-background px-4">
       <div className="flex select-none items-center">
         <Logo />
@@ -22,7 +22,7 @@ export const Navbar: FC = () => (
         <Navlinks />
       </div>
 
-      <div className="flex items-center justify-evenly border">
+      <div className="flex items-center justify-evenly">
         <MagnifyingGlassIcon className="mx-2 h-[1.3rem] w-[1.3rem] md:hidden" />
 
         <ThemeToggle />
