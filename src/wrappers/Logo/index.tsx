@@ -2,5 +2,7 @@ import Image from "next/image";
 import type { FC } from "react";
 
 export const Logo: FC = () => (
-  <Image alt="logo" height={40} src="/image.webp" width={40} />
+  <div className="relative flex h-7 w-7 sm:h-10 sm:w-10">
+    <Image fill alt="logo" src="/image.webp" />
+  </div>
 );
