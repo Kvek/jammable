@@ -7,6 +7,7 @@ import type { WrapperComponentType } from "@types";
 import { ReduxProvider } from "@providers/ReduxProvider";
 import { ThemeProvider } from "@providers/ThemeProvider";
 
+import { Footer } from "@wrappers";
 import { Navbar } from "@wrappers/Navbar";
 
 import { cn } from "@lib/utils";
@@ -28,7 +29,8 @@ const RootLayout: WrapperComponentType = ({ children }) => (
       <ReduxProvider>
         <ThemeProvider disableTransitionOnChange enableSystem attribute="class">
           <Navbar />
-          <div className="px-4 pt-20">{children}</div>
+          <div className="px-4 pb-16 pt-20">{children}</div>
+          <Footer />
         </ThemeProvider>
       </ReduxProvider>
     </body>
