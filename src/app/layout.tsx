@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: WrapperComponentType = ({ children }) => (
-  <html suppressHydrationWarning lang="en">
+  <html suppressHydrationWarning className="h-full" lang="en">
     <body className={cn("bg-background antialiased", notoSans.className)}>
       <ReduxProvider>
         <ThemeProvider disableTransitionOnChange enableSystem attribute="class">
