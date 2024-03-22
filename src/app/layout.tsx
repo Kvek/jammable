@@ -23,9 +23,7 @@ export const metadata: Metadata = {
 
 const RootLayout: WrapperComponentType = ({ children }) => (
   <html suppressHydrationWarning lang="en">
-    <body
-      className={cn("bg-background font-sans antialiased", notoSans.className)}
-    >
+    <body className={cn("bg-background antialiased", notoSans.className)}>
       <ReduxProvider>
         <ThemeProvider disableTransitionOnChange enableSystem attribute="class">
           <Navbar />
