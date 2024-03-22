@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { FC } from "react";
 
 const BannerPill: FC = () => (
-  <div className="absolute bottom-0 z-10 mb-[-28px] flex h-16 w-52 flex-col items-center justify-evenly rounded-[48px] border bg-background p-2 md:mb-[-40px] md:h-20 md:w-64">
+  <div className="absolute bottom-0 z-[2] mb-[-28px] flex h-16 w-52 flex-col items-center justify-evenly rounded-[48px] border bg-background p-2 md:mb-[-40px] md:h-20 md:w-64">
     <div className="flex items-center justify-center">
       <a
         className="relative mx-2 h-6 w-6 md:h-7 md:w-7"
@@ -31,7 +31,7 @@ const BannerPill: FC = () => (
 );
 
 export const Banner: FC = () => (
-  <div className="relative flex aspect-video h-[200px] w-full items-center justify-center md:h-[460px]">
+  <div className="relative mb-10 flex aspect-video h-[200px] w-full items-center justify-center md:h-[460px]">
     <Image
       fill
       alt="banner"
