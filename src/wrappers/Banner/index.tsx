@@ -6,7 +6,7 @@ export const Banner: FC = () => (
     <Image
       fill
       alt="banner"
-      className="rounded-3xl object-cover"
+      className="rounded-xl object-cover"
       src="/banner.png"
     />
     <div className="relative z-10 flex h-full w-full items-center justify-center">
