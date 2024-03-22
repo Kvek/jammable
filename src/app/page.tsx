@@ -3,10 +3,11 @@ import type { FC } from "react";
 import { Input } from "@components/ui/input";
 
 import { Banner, FilterBadges } from "@wrappers";
+import { Popular } from "@wrappers/Popular";
 import { Cartoons } from "@wrappers/Tiles/Cartoons";
 
 const Home: FC = () => (
-  <div className="flex flex-col">
+  <div className="flex flex-col overflow-x-hidden">
     <Banner />
 
     <FilterBadges />
@@ -18,6 +19,7 @@ const Home: FC = () => (
         type="search"
       />
     </div>
+    <Popular />
     <Cartoons />
   </div>
 );
