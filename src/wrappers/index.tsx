@@ -5,6 +5,7 @@ import { Footer } from "./Footer";
 import { Logo } from "./Logo";
 import { Navbar } from "./Navbar";
 import { Navlinks } from "./Navlinks";
+import { Search } from "./Search";
 import { ThemeToggle } from "./ThemeToggle";
 
 export {
@@ -16,5 +17,6 @@ export {
   Logo,
   Navbar,
   Navlinks,
+  Search,
   ThemeToggle,
 };
