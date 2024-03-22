@@ -5,8 +5,8 @@ import { LinkItem } from "@components/shared/LinkItem";
 
 import { cn } from "@lib/utils";
 
-const AvatarIcon: FC<{ className?: string }> = ({ className }) => (
-  <div className={cn(className, "relative md:h-8 md:w-8")}>
+export const AvatarIcon: FC<{ className?: string }> = ({ className }) => (
+  <div className={cn(className, "relative cursor-pointer md:h-8 md:w-8")}>
     <Image
       fill
       alt="profile image"
