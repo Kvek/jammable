@@ -7,6 +7,7 @@ import { Navbar } from "./Navbar";
 import { Navlinks } from "./Navlinks";
 import { Search } from "./Search";
 import { ThemeToggle } from "./ThemeToggle";
+import { Trending } from "./Trending";
 
 export {
   Avatar,
@@ -19,4 +20,5 @@ export {
   Navlinks,
   Search,
   ThemeToggle,
+  Trending,
 };
