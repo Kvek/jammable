@@ -15,8 +15,13 @@ const paths = [
   "/cartoon/image.webp",
 ];
 
-export const Cartoons = (): JSX.Element => (
-  <div className="my-5">
-    <Hero paths={paths} title="Cartoons" />
+interface TilesPropsType {
+  title: string;
+  id: string;
+}
+
+export const Tiles = ({ id, title }: TilesPropsType): JSX.Element => (
+  <div className="my-5" id={id}>
+    <Hero paths={paths} title={title} />
   </div>
 );

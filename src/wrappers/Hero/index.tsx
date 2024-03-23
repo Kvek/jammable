@@ -11,7 +11,7 @@ export const Hero = ({
 }): JSX.Element => (
   <div className="flex w-full flex-col overflow-hidden">
     <div>
-      <h1 className="mb-2 select-none text-3xl font-semibold opacity-80">
+      <h1 className="mb-2 select-none text-3xl font-semibold capitalize opacity-80">
         {title}
       </h1>
     </div>

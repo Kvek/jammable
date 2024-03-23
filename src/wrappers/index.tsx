@@ -7,6 +7,7 @@ import { Navbar } from "./Navbar";
 import { Navlinks } from "./Navlinks";
 import { Search } from "./Search";
 import { ThemeToggle } from "./ThemeToggle";
+import { Tiles } from "./Tiles";
 import { Trending } from "./Trending";
 
 export {
@@ -20,5 +21,6 @@ export {
   Navlinks,
   Search,
   ThemeToggle,
+  Tiles,
   Trending,
 };
