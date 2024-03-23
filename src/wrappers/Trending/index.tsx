@@ -29,10 +29,8 @@ export const Trending = (): JSX.Element => (
         {paths.map((_, index) => (
           <CarouselItem key={index}>
             <Card className="h-full w-full bg-gray-400 p-6">
-              <CardTitle>
-                <h1 className="mb-2 select-none text-3xl font-semibold capitalize opacity-80">
-                  Goku
-                </h1>
+              <CardTitle className="mb-2 select-none text-3xl font-semibold capitalize opacity-80">
+                Goku
               </CardTitle>
               <CardContent />
             </Card>
