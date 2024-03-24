@@ -1,11 +1,12 @@
 "use client";
 
+import { AudioLinesIcon } from "lucide-react";
 import type { FC } from "react";
 
 import { setSearchVisibilityState } from "@redux/search/slice";
 import { useAppDispatch } from "@redux/store";
 
-import { AvatarIcon, Logo, Navlinks, ThemeToggle } from "@wrappers";
+import { AvatarIcon, Navlinks, ThemeToggle } from "@wrappers";
 
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
@@ -17,10 +18,10 @@ export const Navbar: FC = () => {
       <div className="fixed h-5 w-full select-none bg-shadow-rainbow blur-2xl" />
       <div className="z-10 flex h-full w-full items-center justify-between bg-background px-4">
         <div className="flex select-none items-center">
-          <Logo />
+          <AudioLinesIcon className="stroke-[2] text-pink-500 dark:text-pink-300" />
 
           <div className="ml-2 text-xl font-semibold sm:text-2xl">
-            <span className="bg-gradient-to-r from-pink-300 to-purple-700 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-pink-500 to-purple-700 bg-clip-text text-transparent dark:from-pink-400 dark:to-purple-700">
               Jammable
             </span>
           </div>

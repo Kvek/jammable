@@ -2,7 +2,6 @@ import { Avatar, AvatarIcon } from "./Avatar";
 import { Banner } from "./Banner";
 import { FilterBadges } from "./FilterBadges";
 import { Footer } from "./Footer";
-import { Logo } from "./Logo";
 import { Navbar } from "./Navbar";
 import { Navlinks } from "./Navlinks";
 import { Search } from "./Search";
@@ -16,7 +15,6 @@ export {
   Banner,
   FilterBadges,
   Footer,
-  Logo,
   Navbar,
   Navlinks,
   Search,
