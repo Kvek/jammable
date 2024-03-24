@@ -33,7 +33,7 @@ export const Navbar: FC = () => {
 
         <div className="flex items-center justify-evenly">
           <MagnifyingGlassIcon
-            className="mx-2 h-[1.3rem] w-[1.3rem] md:hidden"
+            className="mx-2 h-[1.3rem] w-[1.3rem] cursor-pointer md:hidden"
             onClick={() => dispatch(setSearchVisibilityState(true))}
           />
 
