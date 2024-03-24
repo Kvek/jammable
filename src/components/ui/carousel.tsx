@@ -161,7 +161,7 @@ const CarouselContent = React.forwardRef<
   const { carouselRef } = useCarousel();
 
   return (
-    <div className="h-full w-full overflow-hidden" ref={carouselRef}>
+    <div className=" ml-[50px] h-full w-full" ref={carouselRef}>
       <div className={cn("flex", className)} ref={ref} {...props} />
     </div>
   );
@@ -185,6 +185,9 @@ const CarouselItem = React.forwardRef<
 ));
 CarouselItem.displayName = "CarouselItem";
 
+const navButtonClass =
+  "absolute bottom-0 top-0 z-10 hidden w-[50px] items-center bg-background dark:opacity-65 dark:hover:opacity-90 md:flex";
+
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
@@ -192,20 +195,25 @@ const CarouselPrevious = React.forwardRef<
   const { canScrollPrev, scrollPrev } = useCarousel();
 
   return (
-    <Button
-      className={cn("h-8 w-8 rounded-full", className)}
-      disabled={!canScrollPrev}
-      onClick={scrollPrev}
-      ref={ref}
-      size={size}
-      variant={variant}
-      {...props}
+    <div
+      className={cn(navButtonClass, "left-0", !canScrollPrev && "md:hidden")}
     >
-      <ArrowLeftIcon className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
-    </Button>
+      <Button
+        className={cn("h-8 w-8 rounded-full", className)}
+        disabled={!canScrollPrev}
+        onClick={scrollPrev}
+        ref={ref}
+        size={size}
+        variant={variant}
+        {...props}
+      >
+        <ArrowLeftIcon className="h-4 w-4" />
+        <span className="sr-only">Previous slide</span>
+      </Button>
+    </div>
   );
 });
+
 CarouselPrevious.displayName = "CarouselPrevious";
 
 const CarouselNext = React.forwardRef<
@@ -215,18 +223,22 @@ const CarouselNext = React.forwardRef<
   const { canScrollNext, scrollNext } = useCarousel();
 
   return (
-    <Button
-      className={cn("h-8 w-8 rounded-full", className)}
-      disabled={!canScrollNext}
-      onClick={scrollNext}
-      ref={ref}
-      size={size}
-      variant={variant}
-      {...props}
+    <div
+      className={cn(navButtonClass, "right-0", !canScrollNext && "md:hidden")}
     >
-      <ArrowRightIcon className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
-    </Button>
+      <Button
+        className={cn("h-8 w-8 rounded-full", className)}
+        disabled={!canScrollNext}
+        onClick={scrollNext}
+        ref={ref}
+        size={size}
+        variant={variant}
+        {...props}
+      >
+        <ArrowRightIcon className="h-4 w-4" />
+        <span className="sr-only">Next slide</span>
+      </Button>
+    </div>
   );
 });
 CarouselNext.displayName = "CarouselNext";

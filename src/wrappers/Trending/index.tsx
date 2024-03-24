@@ -19,20 +19,20 @@ const paths = [
   "/cartoon/image(3).webp",
   "/cartoon/image(4).webp",
   "/cartoon/image(5).webp",
-  "/cartoon/image(6).webp",
-  "/cartoon/image(7).webp",
-  "/cartoon/image(9).webp",
-  "/cartoon/image(10).webp",
-  "/cartoon/image.webp",
+  // "/cartoon/image(6).webp",
+  // "/cartoon/image(7).webp",
+  // "/cartoon/image(9).webp",
+  // "/cartoon/image(10).webp",
+  // "/cartoon/image.webp",
 ];
 
 export const Trending = (): JSX.Element => (
   <div className="my-5 h-[425px] w-full">
     <Carousel
-      className="flex h-full w-full items-center"
+      className="relative flex h-full w-full items-center"
       opts={{ align: "start", loop: true }}
     >
-      <CarouselPrevious className="mr-4 hidden md:flex" />
+      <CarouselPrevious className="mr-4" />
 
       <CarouselContent className="h-full w-full">
         {paths.map((_, index) => (
@@ -72,7 +72,7 @@ export const Trending = (): JSX.Element => (
         ))}
       </CarouselContent>
 
-      <CarouselNext className="ml-4 hidden md:flex" />
+      <CarouselNext className="ml-4" />
     </Carousel>
   </div>
 );
