@@ -161,7 +161,7 @@ const CarouselContent = React.forwardRef<
   const { carouselRef } = useCarousel();
 
   return (
-    <div className=" ml-[50px] h-full w-full" ref={carouselRef}>
+    <div className="h-full w-full md:ml-[50px]" ref={carouselRef}>
       <div className={cn("flex", className)} ref={ref} {...props} />
     </div>
   );

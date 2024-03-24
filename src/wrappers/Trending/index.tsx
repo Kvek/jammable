@@ -34,7 +34,7 @@ export const Trending = (): JSX.Element => (
       </h1>
     </div>
 
-    <div className="my-5 h-[425px] w-full">
+    <div className="my-2 h-[425px] w-full md:my-5">
       <Carousel
         className="relative flex h-full w-full items-center"
         opts={{ align: "start", loop: true }}

@@ -16,7 +16,7 @@ export const Hero = ({
       </h1>
     </div>
 
-    <div className="flex overflow-scroll">
+    <div className="my-2 flex overflow-scroll">
       {paths.map((path) => (
         <span className="my-1 mr-2" key={path}>
           <Tile title="">path</Tile>
