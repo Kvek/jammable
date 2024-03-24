@@ -186,7 +186,7 @@ const CarouselItem = React.forwardRef<
 CarouselItem.displayName = "CarouselItem";
 
 const navButtonClass =
-  "absolute bottom-0 top-0 z-10 hidden w-[50px] items-center bg-background dark:opacity-65 dark:hover:opacity-90 md:flex";
+  "absolute -bottom-1 -top-1 z-[1] hidden w-[50px] items-center bg-background dark:opacity-65 dark:hover:opacity-90 md:flex";
 
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
