@@ -1,4 +1,10 @@
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { AudioLinesIcon } from "lucide-react";
+import Image from "next/image";
+
+import { TileContent } from "@components/shared/Tile";
+import { Button } from "@components/ui/Button";
+
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -21,18 +27,46 @@ const paths = [
 ];
 
 export const Trending = (): JSX.Element => (
-  <div className="my-5 aspect-video h-[425px] w-full">
-    <Carousel className="flex h-full w-full items-center" opts={{ loop: true }}>
+  <div className="my-5 h-[425px] w-full">
+    <Carousel
+      className="flex h-full w-full items-center"
+      opts={{ align: "start", loop: true }}
+    >
       <CarouselPrevious className="mr-4 hidden md:flex" />
 
-      <CarouselContent className="h-full">
+      <CarouselContent className="h-full w-full">
         {paths.map((_, index) => (
           <CarouselItem key={index}>
-            <Card className="h-full w-full bg-gray-400 p-6">
-              <CardTitle className="mb-2 select-none text-3xl font-semibold capitalize opacity-80">
-                Goku
-              </CardTitle>
-              <CardContent />
+            <Card className="relative flex h-full w-full overflow-hidden bg-gray-400 p-4 md:mx-1.5 md:w-[375px] md:p-6">
+              <div className="absolute bottom-0 left-0 right-0 top-0 bg-[url('/goku.webp')] bg-cover blur-xl" />
+
+              <CardContent className="z-[2] flex h-full w-full flex-col gap-2 p-0">
+                <div className="flex h-full w-full flex-[4] flex-col md:flex-1">
+                  <div className="relative h-full w-full">
+                    <Image
+                      fill
+                      alt="goku"
+                      className="object-cover"
+                      src="/goku.webp"
+                    />
+                  </div>
+                  <div className="w-full">
+                    <TileContent title={index.toString()} />
+                  </div>
+                </div>
+
+                <div className="flex-col items-start gap-2 bg-opacity-50">
+                  <div className="flex w-full">
+                    <Button
+                      className="w-full bg-purple-800 p-2 font-semibold text-white hover:bg-purple-700"
+                      variant={"shell"}
+                    >
+                      <AudioLinesIcon className="mr-1" />
+                      Jam with Goku
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
           </CarouselItem>
         ))}

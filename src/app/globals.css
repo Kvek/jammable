@@ -76,3 +76,13 @@
     height: 100%;
   }
 }
+
+.lucide {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
+}
+
+.lucide * {
+  vector-effect: non-scaling-stroke;
+}
