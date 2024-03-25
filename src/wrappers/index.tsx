@@ -4,6 +4,7 @@ import { FilterBadges } from "./FilterBadges";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 import { Navlinks } from "./Navlinks";
+import { Popup } from "./Popup";
 import { Search } from "./Search";
 import { ThemeToggle } from "./ThemeToggle";
 import { Tiles } from "./Tiles";
@@ -17,6 +18,7 @@ export {
   Footer,
   Navbar,
   Navlinks,
+  Popup,
   Search,
   ThemeToggle,
   Tiles,
