@@ -22,7 +22,7 @@ export const Search = (): JSX.Element => {
   return (
     <div
       className={cn(
-        " tr fixed bottom-0 top-0 z-10 flex h-svh w-svw flex-col bg-background p-4 transition-transform md:hidden",
+        "fixed bottom-0 top-0 z-10 flex h-svh w-svw flex-col bg-background p-4 transition-transform md:hidden",
         showSearch ? "translate-x-0" : "translate-x-[100%]",
       )}
     >

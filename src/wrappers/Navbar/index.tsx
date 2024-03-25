@@ -34,7 +34,7 @@ export const Navbar: FC = () => {
         </div>
 
         <div className="ml-2 flex h-full items-center gap-[.25rem]">
-          <Button size={"icon"} variant={"shell"}>
+          <Button className="flex md:hidden" size={"icon"} variant={"shell"}>
             <MagnifyingGlassIcon
               height={18}
               onClick={() => dispatch(setSearchVisibilityState(true))}
