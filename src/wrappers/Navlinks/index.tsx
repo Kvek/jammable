@@ -10,28 +10,28 @@ import {
 } from "@radix-ui/react-icons";
 
 export const Navlinks: OptionalWrapperComponentType = ({ children }) => (
-  <ul className="flex h-full w-full items-center justify-between">
-    <li className="md:mr-4">
+  <ul className="flex w-full items-center justify-between md:justify-end md:gap-7">
+    <li>
       <LinkItem Icon={HomeIcon} href={"/"}>
-        <span className="md:ml-1">Home</span>
+        <span>Home</span>
       </LinkItem>
     </li>
 
-    <li className="md:mr-4">
-      <LinkItem Icon={DashboardIcon} href={"/library"}>
-        <span className="md:ml-1">My Library</span>
-      </LinkItem>
-    </li>
-
-    <li className="md:mr-4">
+    <li>
       <LinkItem Icon={GlobeIcon} href={"/community"}>
-        <span className="md:ml-1">Community</span>
+        <span>Community</span>
       </LinkItem>
     </li>
 
-    <li className="md:mr-4">
+    <li>
+      <LinkItem Icon={DashboardIcon} href={"/library"}>
+        <span>My Library</span>
+      </LinkItem>
+    </li>
+
+    <li>
       <LinkItem Icon={IdCardIcon} href={"/contact"}>
-        <span className="md:ml-1">Contact</span>
+        <span>Contact</span>
       </LinkItem>
     </li>
 

@@ -20,11 +20,19 @@ export const ThemeToggle: FC = () => {
       onClick={() => {
         setTheme(theme === DARK ? LIGHT : DARK);
       }}
-      size="shell"
+      size="icon"
       variant="shell"
     >
-      <MoonIcon className=" h-[1.1rem] w-[1.1rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <SunIcon className="absolute h-[1.1rem] w-[1.1rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <MoonIcon
+        className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+        height={18}
+        width={18}
+      />
+      <SunIcon
+        className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+        height={18}
+        width={18}
+      />
     </Button>
   );
 };

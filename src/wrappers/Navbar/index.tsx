@@ -6,9 +6,11 @@ import type { FC } from "react";
 import { setSearchVisibilityState } from "@redux/search/slice";
 import { useAppDispatch } from "@redux/store";
 
+import { Button } from "@components/ui/Button";
+
 import { AvatarIcon, Navlinks, ThemeToggle } from "@wrappers";
 
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { BellIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 export const Navbar: FC = () => {
   const dispatch = useAppDispatch();
@@ -27,21 +29,28 @@ export const Navbar: FC = () => {
           </div>
         </div>
 
-        <div className="hidden md:flex">
+        <div className="hidden w-full justify-end border-r-2 py-1 pr-6 md:flex">
           <Navlinks />
         </div>
 
-        <div className="flex items-center justify-evenly">
-          <MagnifyingGlassIcon
-            className="mx-2 h-[1.3rem] w-[1.3rem] cursor-pointer md:hidden"
-            onClick={() => dispatch(setSearchVisibilityState(true))}
-          />
+        <div className="ml-2 flex h-full items-center gap-[.25rem]">
+          <Button size={"icon"} variant={"shell"}>
+            <MagnifyingGlassIcon
+              height={18}
+              onClick={() => dispatch(setSearchVisibilityState(true))}
+              width={18}
+            />
+          </Button>
 
           <ThemeToggle />
 
-          <span className="ml-4 hidden md:flex">
+          <Button size={"icon"} variant={"shell"}>
+            <BellIcon height={18} width={18} />
+          </Button>
+
+          <Button className="hidden md:flex" size={"icon"} variant={"shell"}>
             <AvatarIcon />
-          </span>
+          </Button>
         </div>
       </div>
     </div>

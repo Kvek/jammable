@@ -32,7 +32,7 @@ export const LinkItem: WrapperComponentType<
 > = ({ Icon, children, ...props }) => (
   <span className={cn("relative", props.className)}>
     <Link {...props}>
-      <Icon className="flex h-6 min-h-5 w-6 min-w-5 md:h-5 md:w-5" />
+      <Icon className="flex h-6 min-h-5 w-6 min-w-5 md:hidden md:h-5 md:w-5" />
       <span className="text-[10px] md:text-[14px]">{children}</span>
     </Link>
   </span>
