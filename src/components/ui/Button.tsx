@@ -81,7 +81,7 @@ const ToolTipButton: WrapperComponentType<TooolTipButtonPropsType> = ({
 
     <TooltipContent>
       <p>{tooltipContent}</p>
-      <TooltipArrow className="TooltipArrow" />
+      <TooltipArrow className="fill-foreground" />
     </TooltipContent>
   </Tooltip>
 );
