@@ -19,17 +19,17 @@ const paths = [
   "/cartoon/image(3).webp",
   "/cartoon/image(4).webp",
   "/cartoon/image(5).webp",
-  // "/cartoon/image(6).webp",
-  // "/cartoon/image(7).webp",
-  // "/cartoon/image(9).webp",
-  // "/cartoon/image(10).webp",
-  // "/cartoon/image.webp",
+  "/cartoon/image(6).webp",
+  "/cartoon/image(7).webp",
+  "/cartoon/image(9).webp",
+  "/cartoon/image(10).webp",
+  "/cartoon/image.webp",
 ];
 
 export const Trending = (): JSX.Element => (
   <div className="flex w-full flex-col overflow-hidden">
     <div>
-      <h1 className="mb-2 select-none text-3xl font-semibold capitalize opacity-80">
+      <h1 className="mb-2 select-none text-lg font-semibold capitalize opacity-80 md:text-3xl">
         Trending
       </h1>
     </div>
