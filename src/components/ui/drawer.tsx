@@ -4,12 +4,16 @@ import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
 
 import { cn } from "@/lib/utils";
+import { Cross2Icon } from "@radix-ui/react-icons";
+
+import { Button } from "./Button";
 
 const Drawer = ({
   shouldScaleBackground = true,
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Root>): JSX.Element => (
   <DrawerPrimitive.Root
+    modal={false}
     shouldScaleBackground={shouldScaleBackground}
     {...props}
   />
@@ -42,13 +46,22 @@ const DrawerContent = React.forwardRef<
     <DrawerOverlay />
     <DrawerPrimitive.Content
       className={cn(
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background",
+        "fixed inset-x-0 bottom-0 z-10 mt-24 flex h-[calc(100%_-_80px)] flex-col rounded-t-[10px] border bg-background dark:border-none ",
         className,
       )}
+      onInteractOutside={(e) => {
+        e.preventDefault();
+      }}
       ref={ref}
       {...props}
     >
-      <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
+      <div className="flex w-full justify-end p-2">
+        <DrawerClose asChild>
+          <Button className="rounded-full" size={"icon"} variant={"outline"}>
+            <Cross2Icon height={18} width={18} />
+          </Button>
+        </DrawerClose>
+      </div>
       {children}
     </DrawerPrimitive.Content>
   </DrawerPortal>
