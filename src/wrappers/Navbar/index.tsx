@@ -6,7 +6,7 @@ import type { FC } from "react";
 import { setSearchVisibilityState } from "@redux/search/slice";
 import { useAppDispatch } from "@redux/store";
 
-import { Button } from "@components/ui/Button";
+import { Button, ToolTipButton } from "@components/ui/Button";
 
 import { AvatarIcon, Navlinks, ThemeToggle } from "@wrappers";
 
@@ -34,19 +34,32 @@ export const Navbar: FC = () => {
         </div>
 
         <div className="ml-2 flex h-full items-center gap-[.25rem]">
-          <Button className="flex md:hidden" size={"icon"} variant={"shell"}>
+          <ToolTipButton
+            buttonProps={{
+              className: "md:hidden flex",
+              size: "icon",
+              variant: "shell",
+            }}
+            tooltipContent="Search"
+          >
             <MagnifyingGlassIcon
               height={18}
               onClick={() => dispatch(setSearchVisibilityState(true))}
               width={18}
             />
-          </Button>
+          </ToolTipButton>
 
           <ThemeToggle />
 
-          <Button size={"icon"} variant={"shell"}>
+          <ToolTipButton
+            buttonProps={{
+              size: "icon",
+              variant: "shell",
+            }}
+            tooltipContent="Notifications"
+          >
             <BellIcon height={18} width={18} />
-          </Button>
+          </ToolTipButton>
 
           <Button className="hidden md:flex" size={"icon"} variant={"shell"}>
             <AvatarIcon />

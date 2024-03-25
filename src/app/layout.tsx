@@ -9,6 +9,7 @@ import { ThemeProvider } from "@providers/ThemeProvider";
 
 import { Footer, Navbar, Search } from "@wrappers";
 
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@lib/utils";
 
 const notoSans = NotoSans({
@@ -27,10 +28,12 @@ const RootLayout: WrapperComponentType = ({ children }) => (
     >
       <ReduxProvider>
         <ThemeProvider disableTransitionOnChange enableSystem attribute="class">
-          <Navbar />
-          <div className="px-4 pb-16 pt-20">{children}</div>
-          <Footer />
-          <Search />
+          <TooltipProvider>
+            <Navbar />
+            <div className="px-4 pb-16 pt-20">{children}</div>
+            <Footer />
+            <Search />
+          </TooltipProvider>
         </ThemeProvider>
       </ReduxProvider>
     </body>

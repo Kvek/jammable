@@ -1,6 +1,15 @@
 import { cva, type VariantProps } from "class-variance-authority";
-import * as React from "react";
+import type { ButtonHTMLAttributes } from "react";
+import { forwardRef } from "react";
 
+import type { WrapperComponentType } from "@types";
+
+import {
+  Tooltip,
+  TooltipArrow,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
 
@@ -37,12 +46,12 @@ const buttonVariants = cva(
 );
 
 export interface ButtonPropsInterface
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonPropsInterface>(
+const Button = forwardRef<HTMLButtonElement, ButtonPropsInterface>(
   ({ asChild = false, className, size, variant, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
@@ -55,6 +64,28 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropsInterface>(
   },
 );
 
+interface TooolTipButtonPropsType {
+  tooltipContent: string;
+  buttonProps?: ButtonPropsInterface;
+}
+
+const ToolTipButton: WrapperComponentType<TooolTipButtonPropsType> = ({
+  buttonProps,
+  children,
+  tooltipContent,
+}) => (
+  <Tooltip delayDuration={0}>
+    <TooltipTrigger asChild>
+      <Button {...buttonProps}>{children}</Button>
+    </TooltipTrigger>
+
+    <TooltipContent>
+      <p>{tooltipContent}</p>
+      <TooltipArrow className="TooltipArrow" />
+    </TooltipContent>
+  </Tooltip>
+);
+
 Button.displayName = "Button";
 
-export { Button, buttonVariants };
+export { Button, buttonVariants, ToolTipButton };
