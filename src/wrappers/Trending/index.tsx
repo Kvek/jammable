@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { nameExtractor } from "@lib/utils";
 import type { ListBlobResultBlob } from "@vercel/blob";
 import { list } from "@vercel/blob";
 
@@ -47,45 +48,51 @@ export const Trending = async (): Promise<JSX.Element | null> => {
           <CarouselPrevious className="mr-4" />
 
           <CarouselContent className="h-full w-full">
-            {images.map(({ url }, index) => (
-              <CarouselItem key={index}>
-                <Card className="relative flex h-full w-full overflow-hidden p-4 md:mx-1.5 md:w-[375px] md:p-6">
-                  <div
-                    className="absolute bottom-0 left-0 right-0 top-0 bg-cover blur-xl"
-                    style={{ backgroundImage: `url('${url}')` }}
-                  />
+            {images.map(({ pathname, url }, index) => {
+              const title = nameExtractor(pathname);
 
-                  <CardContent className="z-[2] flex h-full w-full flex-col gap-2 p-0">
-                    <div className="flex h-full w-full flex-[4] flex-col md:flex-1">
-                      <div className="relative h-full w-full">
-                        <Image
-                          fill
-                          priority
-                          alt="img"
-                          className="object-cover"
-                          src={url}
-                        />
-                      </div>
-                      <div className="w-full">
-                        <TileContent title={index.toString()} />
-                      </div>
-                    </div>
+              return (
+                <CarouselItem key={index}>
+                  <Card className="relative flex h-full w-full overflow-hidden p-4 md:mx-1.5 md:w-[375px] md:p-6">
+                    <div
+                      className="absolute bottom-0 left-0 right-0 top-0 bg-cover blur-3xl brightness-200"
+                      style={{ backgroundImage: `url('${url}')` }}
+                    />
 
-                    <div className="flex-col items-start gap-2 bg-opacity-50">
-                      <div className="flex w-full">
-                        <Button
-                          className="w-full bg-purple-800 p-2 font-semibold text-white hover:bg-purple-700"
-                          variant={"shell"}
-                        >
-                          <AudioLinesIcon className="mr-1" />
-                          Jam with
-                        </Button>
+                    <CardContent className="z-[2] flex h-full w-full flex-col gap-2 p-0">
+                      <div className="flex h-full w-full flex-[4] flex-col md:flex-1">
+                        <div className="relative h-full w-full">
+                          <Image
+                            fill
+                            priority
+                            alt="img"
+                            className="object-cover"
+                            src={url}
+                          />
+                        </div>
+
+                        <div className="w-full">
+                          <TileContent title={title} />
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
+
+                      <div className="flex-col items-start gap-2 bg-opacity-50">
+                        <div className="flex w-full">
+                          <Button
+                            className="w-full bg-purple-800 p-3 font-semibold text-white hover:bg-purple-700"
+                            variant={"shell"}
+                          >
+                            <AudioLinesIcon className="mr-1" />
+                            Jam with
+                            <span className="capitalize">&nbsp;{title}</span>
+                          </Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              );
+            })}
           </CarouselContent>
 
           <CarouselNext className="ml-4" />

@@ -25,8 +25,8 @@ export const TileCta: FC<{ className?: string }> = ({
   </div>
 );
 export const TileContent: FC<{ title: string }> = ({ title }) => (
-  <div className="flex h-12 w-full bg-white px-2 py-1 text-black">
-    <h3 className="flex flex-[2] items-center text-[16px] font-semibold">
+  <div className="flex h-12 w-full bg-white px-2 py-2 text-black">
+    <h3 className="flex flex-[2] items-center text-[20px] font-semibold capitalize">
       {title}
     </h3>
     <TileCta />
