@@ -1,8 +1,10 @@
 import Image from "next/image";
 import type { FC } from "react";
 
-const BannerPill: FC = () => (
-  <div className="absolute bottom-0 z-[2] mb-[-28px] flex h-16 w-52 flex-col items-center justify-evenly rounded-[48px] border bg-background p-2 md:mb-[-40px] md:h-20 md:w-64">
+import { Button } from "@components/ui/Button";
+
+export const BannerPill: FC = () => (
+  <div className="absolsute bottom-0 z-[2] mb-[-28px] flex h-16 w-52 flex-col items-center justify-evenly rounded-[45px] bg-background p-2  md:h-20 md:w-64">
     <div className="flex items-center justify-center">
       <a
         className="relative mx-2 h-6 w-6 md:h-7 md:w-7"
@@ -31,23 +33,37 @@ const BannerPill: FC = () => (
 );
 
 export const Banner: FC = () => (
-  <div className="relative mb-10 flex aspect-video h-[200px] w-full items-center justify-center md:h-[460px]">
-    <Image
-      fill
-      alt="banner"
-      className="z-[1] rounded-xl object-cover"
-      src="/banner.png"
-    />
+  <div className="relative mb-20 flex h-[200px] w-full select-none pl-[3rem] md:h-[420px]">
+    <div className="flex flex-1 flex-col">
+      <div className="relative z-[1] flex h-full flex-col justify-center">
+        <h1 className="z-10 text-4xl font-bold  dark:text-pink-200 md:text-[3.25rem] md:leading-[5rem]">
+          Create without limits
+        </h1>
+        <h1 className="z-10 w-[80%] text-4xl font-semibold opacity-80 md:text-[2rem] md:leading-[3.25rem]">
+          Generate song covers with any voice using AI
+        </h1>
+      </div>
 
-    <div className="relative z-[1] flex h-full w-full flex-col items-center justify-center text-white">
-      <span className="absolute flex h-20 w-[80%] bg-black blur-[50px]" />
-      <h1 className="z-10 w-[70%] text-center text-2xl font-extrabold  md:text-[3rem] md:leading-[4rem]">
-        Create song covers using any voice with AI
-      </h1>
+      <div>
+        <Button
+          className="text-md w-[200px] bg-gradient-to-r from-pink-500 to-purple-700 px-2 py-3 font-bold capitalize text-white dark:from-pink-400 dark:to-purple-700"
+          variant={"shell"}
+        >
+          Start jamming
+        </Button>
+      </div>
     </div>
 
-    <BannerPill />
-
-    <div className="absolute bottom-2 z-0 h-5 w-full select-none bg-shadow-rainbow blur-xl" />
+    <div className="relative hidden w-full flex-1 md:flex">
+      <div className="absolute min-h-full min-w-full overflow-hidden">
+        <Image
+          fill
+          alt="banner"
+          className="scale-[2] object-contain"
+          src="/banner.png"
+          style={{ left: "10%", top: "15%" }}
+        />
+      </div>
+    </div>
   </div>
 );
