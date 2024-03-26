@@ -4,6 +4,6 @@ import { twMerge } from "tailwind-merge";
 export const cn = (...inputs: ClassValue[]): string => twMerge(clsx(inputs));
 
 export const nameExtractor = (url: string): string => {
-  const match = url.toLowerCase().match(/\/([^/]+)\.png$/);
+  const match = url.toLowerCase().match(/\/([^/]+)\.(png|jpeg|jpg)$/);
   return match ? match[1].replace(/_/g, " ") : "";
 };
