@@ -7,7 +7,7 @@ import type { WrapperComponentType } from "@types";
 import { ReduxProvider } from "@providers/ReduxProvider";
 import { ThemeProvider } from "@providers/ThemeProvider";
 
-import { Footer, Navbar, Search } from "@wrappers";
+import { Footer, Navbar } from "@wrappers";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@lib/utils";
@@ -32,7 +32,6 @@ const RootLayout: WrapperComponentType = ({ children }) => (
             <Navbar />
             <div className="px-4 pb-16 pt-16 md:pt-20">{children}</div>
             <Footer />
-            <Search />
           </TooltipProvider>
         </ThemeProvider>
       </ReduxProvider>

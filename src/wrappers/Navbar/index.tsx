@@ -1,11 +1,9 @@
-"use client";
-
 import { AudioLinesIcon } from "lucide-react";
 import type { FC } from "react";
 
 import { Button, ToolTipButton } from "@components/ui/Button";
 
-import { AvatarIcon, Navlinks, Popup, ThemeToggle } from "@wrappers";
+import { AvatarIcon, Navlinks, Popup, Search, ThemeToggle } from "@wrappers";
 
 import { BellIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
@@ -36,7 +34,7 @@ export const Navbar: FC = () => (
             </Button>
           }
         >
-          <div />
+          <Search />
         </Popup>
 
         <ThemeToggle />

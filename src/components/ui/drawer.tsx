@@ -13,7 +13,6 @@ const Drawer = ({
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Root>): JSX.Element => (
   <DrawerPrimitive.Root
-    modal={false}
     shouldScaleBackground={shouldScaleBackground}
     {...props}
   />
@@ -46,22 +45,20 @@ const DrawerContent = React.forwardRef<
     <DrawerOverlay />
     <DrawerPrimitive.Content
       className={cn(
-        "fixed inset-x-0 bottom-0 z-10 mt-24 flex h-[calc(100%_-_80px)] flex-col rounded-t-[10px] border bg-background dark:border-none ",
+        "fixed inset-x-0 bottom-0 z-50 mt-12 flex h-[85%] flex-col rounded-t-[10px] border bg-background",
         className,
       )}
-      onInteractOutside={(e) => {
-        e.preventDefault();
-      }}
       ref={ref}
       {...props}
     >
-      <div className="flex w-full justify-end p-2">
+      <div className="z-2 flex justify-end p-2">
         <DrawerClose asChild>
           <Button className="rounded-full" size={"icon"} variant={"outline"}>
             <Cross2Icon height={18} width={18} />
           </Button>
         </DrawerClose>
       </div>
+
       {children}
     </DrawerPrimitive.Content>
   </DrawerPortal>

@@ -10,3 +10,9 @@ export enum ThemeEnum {
   DARK = "dark",
   LIGHT = "light",
 }
+
+export interface ImageBlobInterface {
+  key: string;
+  title: string;
+  src: string;
+}

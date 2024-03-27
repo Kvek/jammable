@@ -1,45 +1,25 @@
-"use client";
-
-import React from "react";
-
-import { selectShowSearchState } from "@redux/search/selector";
-import { setSearchVisibilityState } from "@redux/search/slice";
-import { useAppDispatch, useAppSelector } from "@redux/store";
-
-import { Button } from "@components/ui/Button";
-import { Input } from "@components/ui/input";
-
 import { FilterBadges } from "@wrappers";
 
-import { cn } from "@lib/utils";
-import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { getImages } from "@lib/utils";
 
-export const Search = (): JSX.Element => {
-  const dispatch = useAppDispatch();
+import { Results } from "./Results";
+import { SearchInput } from "./SearchInput";
 
-  const showSearch = useAppSelector(selectShowSearchState);
+export const Search = async (): Promise<JSX.Element> => {
+  const data = await getImages();
 
   return (
-    <div
-      className={cn(
-        "fixed bottom-0 top-0 z-10 flex h-svh w-svw flex-col bg-background p-4 transition-transform md:hidden",
-        showSearch ? "translate-x-0" : "translate-x-[100%]",
-      )}
-    >
+    <div className="h-full w-full p-4">
       <div>
-        <Button
-          onClick={() => dispatch(setSearchVisibilityState(false))}
-          variant={"shell"}
-        >
-          <ArrowLeftIcon />
-        </Button>
-      </div>
+        <SearchInput />
 
-      <div>
-        <Input placeholder="Search all voices" type="search" />
         <span className="my-4">
           <FilterBadges />
         </span>
+      </div>
+
+      <div className="flex h-full w-full flex-wrap justify-center overflow-scroll pt-5">
+        <Results tiles={data} />
       </div>
     </div>
   );
