@@ -36,10 +36,10 @@ export const Banner: FC = () => (
   <div className="relative mb-20 flex h-[200px] w-full select-none pl-[3rem] md:h-[420px]">
     <div className="flex flex-1 flex-col">
       <div className="relative z-[1] flex h-full flex-col justify-center">
-        <h1 className="z-10 text-4xl font-bold  dark:text-pink-200 md:text-[3.25rem] md:leading-[5rem]">
+        <h1 className="z-10 text-4xl font-bold dark:text-pink-200 md:text-[3.25rem] md:leading-[5rem]">
           Create without limits
         </h1>
-        <h1 className="z-10 w-[80%] text-4xl font-semibold opacity-80 md:text-[2rem] md:leading-[3.25rem]">
+        <h1 className="z-10 w-[80%] text-4xl font-semibold opacity-70 dark:opacity-100 md:text-[2rem] md:leading-[3rem]">
           Generate song covers with any voice using AI
         </h1>
       </div>
