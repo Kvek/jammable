@@ -1,18 +1,13 @@
-import Image from "next/image";
 import type { FC } from "react";
 
 import { LinkItem } from "@components/shared/LinkItem";
 
 import { cn } from "@lib/utils";
+import { PersonIcon } from "@radix-ui/react-icons";
 
 export const AvatarIcon: FC<{ className?: string }> = ({ className }) => (
   <div className={cn(className, "relative cursor-pointer md:h-8 md:w-8")}>
-    <Image
-      fill
-      alt="profile image"
-      className="rounded-[50%] bg-slate-400"
-      src="/test.jpg"
-    />
+    <PersonIcon className="flex h-full w-full rounded-[50%] border bg-foreground p-1 text-background" />
   </div>
 );
 
