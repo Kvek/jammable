@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Jammable
 
-## Getting Started
+### Design
 
-First, run the development server:
+With the underlying foundations similar to the figma designs, I made a few new decisions.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- I decided to go with a card style layout similar to Netflix, Prime, YT etc with a navbar and a footer on mobile.
+- I decided to go with footer icons with titles, for navigation on mobile.
+- On the cards, I added a footer bar with the title and 3 icons to indicate user count, likes and share counts; similar to an instagram card.
+- I switched up the logo as I felt the one with the mic wasn't clean.
+- I highlighted the trending voices by making them larger, more stylish and in a carousel with navigation dots.
+- I also added theme toggling and search functionality through an iOS drawer like system.
+- Added tooltips to icons where applicable.
+- I went with a theme of pink, purple, black and white as the primary colors, with crisp 15x15 icons.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Data
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- I created a vercel blob storgae bucket to host the images I used in the app.
+- Api calls made directly on the server so almost not latency.
+- I went with react server components(RSC) to generate a fast and cleaner build without need for 3rd party libraries.
+- I added rxjs and redux-observable to the codebase in-case there was a need to handle heavy data streaming and events in the future.
