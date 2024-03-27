@@ -1,27 +1,12 @@
 import type { RouteType } from "next/dist/lib/load-custom-routes";
 import type { LinkProps } from "next/link";
-import NextLink from "next/link";
 import type { ComponentType } from "react";
 
 import type { WrapperComponentType } from "@types";
 
 import { cn } from "@lib/utils";
 
-const Link: WrapperComponentType<LinkProps<RouteType>> = ({
-  children,
-  ...props
-}) => (
-  <NextLink
-    {...props}
-    className={cn(
-      "flex w-full flex-col items-center justify-center opacity-70 md:flex-row md:font-semibold md:hover:opacity-100",
-      props.className,
-    )}
-    href={props.href}
-  >
-    {children}
-  </NextLink>
-);
+import { Link } from "./Link";
 
 export const LinkItem: WrapperComponentType<
   LinkProps<RouteType> & {
