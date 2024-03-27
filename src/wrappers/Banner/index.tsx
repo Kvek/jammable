@@ -46,7 +46,7 @@ export const Banner: FC = () => (
 
       <div>
         <Button
-          className="text-md w-[200px] bg-gradient-to-r from-pink-500 to-purple-700 px-2 py-3 font-bold capitalize text-white dark:from-pink-400 dark:to-purple-700"
+          className="w-[200px] bg-gradient-to-r from-pink-500 to-purple-700 px-2 py-3 font-bold capitalize text-white dark:from-pink-400 dark:to-purple-700"
           variant={"shell"}
         >
           Start jamming

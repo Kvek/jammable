@@ -233,8 +233,9 @@ const CarouselContent = React.forwardRef<
         <div className="text-center">
           {scrollSnaps.map((_, index) => (
             <DotButton
+              aria-label={`card ${index}`}
               className={cn(
-                "ml-1 h-[6px] w-[6px] touch-manipulation rounded-full bg-foreground",
+                "ml-1 h-[6px] w-[6px] rounded-full bg-foreground",
                 index === selectedIndex ? "opacity-100" : "opacity-30",
               )}
               key={index}

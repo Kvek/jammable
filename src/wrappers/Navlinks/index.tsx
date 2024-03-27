@@ -35,6 +35,6 @@ export const Navlinks: OptionalWrapperComponentType = ({ children }) => (
       </LinkItem>
     </li>
 
-    {children}
+    <li>{children}</li>
   </ul>
 );

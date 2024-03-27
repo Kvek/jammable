@@ -34,7 +34,13 @@ export const TileContent: FC<{ title: string }> = ({ title }) => (
 
 export const Tile: FC<{ title: string; src: string }> = ({ src, title }) => (
   <div className="relative h-[205px] min-w-[305px] overflow-hidden rounded-lg bg-gray-400 p-3 shadow-md md:h-[182px] md:w-[325px]">
-    <Image fill alt={title} className="object-cover object-center" src={src} />
+    <Image
+      fill
+      alt={title}
+      className="object-cover object-center"
+      placeholder="empty"
+      src={src}
+    />
     <div className="absolute bottom-0 left-0 w-full">
       <TileContent title={title} />
     </div>

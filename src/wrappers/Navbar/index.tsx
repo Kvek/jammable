@@ -29,7 +29,7 @@ export const Navbar: FC = () => (
         <Popup
           tooltipContent="Search"
           trigger={
-            <Button size="icon" variant="shell">
+            <Button aria-label="search" size="icon" variant="shell">
               <MagnifyingGlassIcon height={18} width={18} />
             </Button>
           }
@@ -41,6 +41,7 @@ export const Navbar: FC = () => (
 
         <ToolTipButton
           buttonProps={{
+            "aria-label": "notifications",
             size: "icon",
             variant: "shell",
           }}
@@ -49,7 +50,12 @@ export const Navbar: FC = () => (
           <BellIcon height={18} width={18} />
         </ToolTipButton>
 
-        <Button className="hidden md:flex" size={"icon"} variant={"shell"}>
+        <Button
+          aria-label="avatar"
+          className="hidden md:flex"
+          size={"icon"}
+          variant={"shell"}
+        >
           <AvatarIcon />
         </Button>
       </div>
