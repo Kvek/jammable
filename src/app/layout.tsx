@@ -30,7 +30,7 @@ const RootLayout: WrapperComponentType = ({ children }) => (
         <ThemeProvider disableTransitionOnChange enableSystem attribute="class">
           <TooltipProvider>
             <Navbar />
-            <div className="px-4 pb-16 pt-20">{children}</div>
+            <div className="px-4 pb-16 pt-16 md:pt-20">{children}</div>
             <Footer />
             <Search />
           </TooltipProvider>

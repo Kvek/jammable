@@ -33,7 +33,7 @@ export const BannerPill: FC = () => (
 );
 
 export const Banner: FC = () => (
-  <div className="relative mb-20 flex h-[200px] w-full select-none pl-[3rem] md:h-[420px]">
+  <div className="relative mb-20 hidden h-[200px] w-full select-none md:flex md:h-[420px] md:pl-[3rem]">
     <div className="flex flex-1 flex-col">
       <div className="relative z-[1] flex h-full flex-col justify-center">
         <h1 className="z-10 text-4xl font-bold dark:text-pink-200 md:text-[3.25rem] md:leading-[5rem]">
