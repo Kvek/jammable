@@ -1,9 +1,12 @@
 "use client";
 
+import type { EmblaCarouselType } from "embla-carousel";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
+import type { PropsWithChildren } from "react";
 import * as React from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -31,6 +34,68 @@ type CarouselContextPropsType = CarouselProps & {
   scrollNext: () => void;
   canScrollPrev: boolean;
   canScrollNext: boolean;
+};
+
+interface UseDotButtonType {
+  selectedIndex: number;
+  scrollSnaps: number[];
+  onDotButtonClick: (index: number) => void;
+}
+
+export const useDotButton = (
+  emblaApi: EmblaCarouselType | undefined,
+): UseDotButtonType => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const onDotButtonClick = useCallback(
+    (index: number) => {
+      if (!emblaApi) return;
+      emblaApi.scrollTo(index);
+    },
+    [emblaApi],
+  );
+
+  const onInit = useCallback((emblaApi: EmblaCarouselType) => {
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, []);
+
+  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    onInit(emblaApi);
+    onSelect(emblaApi);
+    emblaApi.on("reInit", onInit);
+    emblaApi.on("reInit", onSelect);
+    emblaApi.on("select", onSelect);
+  }, [emblaApi, onInit, onSelect]);
+
+  return {
+    onDotButtonClick,
+    scrollSnaps,
+    selectedIndex,
+  };
+};
+
+type PropType = PropsWithChildren<
+  React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >
+>;
+
+export const DotButton: React.FC<PropType> = (props) => {
+  const { children, ...restProps } = props;
+
+  return (
+    <button type="button" {...restProps}>
+      {children}
+    </button>
+  );
 };
 
 const CarouselContext = React.createContext<CarouselContextPropsType | null>(
@@ -158,11 +223,35 @@ const CarouselContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
-  const { carouselRef } = useCarousel();
+  const { api, carouselRef } = useCarousel();
+
+  const { onDotButtonClick, scrollSnaps, selectedIndex } = useDotButton(api);
 
   return (
-    <div className="h-full w-full md:ml-[50px]" ref={carouselRef}>
-      <div className={cn("flex", className)} ref={ref} {...props} />
+    <div className="flex h-full w-full flex-col">
+      <div className="z-[2] order-2 flex h-10 w-full justify-center md:order-1 md:justify-end">
+        <div className="text-center">
+          {scrollSnaps.map((_, index) => (
+            <DotButton
+              className={cn(
+                "ml-1 h-[6px] w-[6px] touch-manipulation rounded-full bg-foreground",
+                index === selectedIndex ? "opacity-100" : "opacity-30",
+              )}
+              key={index}
+              onClick={() => {
+                onDotButtonClick(index);
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div
+        className="mt-4 h-full w-full md:order-2 md:ml-[50px]"
+        ref={carouselRef}
+      >
+        <div className={cn("flex", className)} ref={ref} {...props} />
+      </div>
     </div>
   );
 });

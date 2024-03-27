@@ -34,13 +34,13 @@ export const Trending = async (): Promise<JSX.Element | null> => {
 
   return (
     <div className="flex w-full flex-col overflow-hidden">
-      <div>
+      <div className="hidden md:flex">
         <h1 className="mb-2 select-none text-lg font-semibold capitalize opacity-80 md:text-3xl">
           Trending
         </h1>
       </div>
 
-      <div className="my-2 h-[425px] w-full md:my-5">
+      <div className="h-[475px] w-full">
         <Carousel
           className="relative flex h-full w-full items-center"
           opts={{ align: "start", loop: true }}
