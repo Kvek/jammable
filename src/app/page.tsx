@@ -1,13 +1,23 @@
 import { type FC } from "react";
 
-import { Banner, Trending } from "@wrappers";
+import { Banner, Tiles, Trending } from "@wrappers";
 
-const Home: FC = () => (
-  <div className="flex flex-col overflow-x-hidden">
-    <Banner />
+import { getBlobFolders } from "@lib/utils";
 
-    <Trending />
-  </div>
-);
+const Home: FC = async () => {
+  const folders = await getBlobFolders();
+
+  return (
+    <div className="flex flex-col overflow-x-hidden">
+      <Banner />
+
+      <Trending />
+
+      {folders.map((f) => (
+        <Tiles id={f} key={f} />
+      ))}
+    </div>
+  );
+};
 
 export default Home;
